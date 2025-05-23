@@ -2,11 +2,11 @@
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-**Dairify** is a comprehensive web-based system designed to support the management of a smart machine that detects and neutralizes antibiotic residues in milk. This system streamlines machine operations, result storage, user interaction, and compliance reporting — ideal for farmers, producers, and researchers.
+**Dairify** is a full-stack web application designed to support a smart machine that detects and neutralizes antibiotic residues in milk. Built for farms, labs, and food safety institutions, the platform includes dashboards, testing, reporting, and ordering functionality.
 
 ---
 
-## Table of Contents
+## 📚 Table of Contents
 
 1. [Features](#features)  
 2. [Technologies Used](#technologies-used)  
@@ -21,45 +21,48 @@
 
 ---
 
-## Features
+## 🌟 Features
 
-- ✅ User registration and login with session support
-- ✅ User dashboard to manage their machine
-- ✅ Submit and view food sample test results
-- ✅ Monitor machine status and recent tests
-- ✅ Add, update, and delete antibiotics and enzymes
-- ✅ Place machine orders via "Buy" view
-- ✅ View order details after confirmation
-- ✅ Access research data and support pages
-- ✅ Clean and styled EJS-based UI with multiple views
+- 🧪 Register and log in to monitor your machine
+- 📊 Dashboard showing real-time machine status
+- 💉 Add antibiotics and enzymes
+- 🔬 Submit food samples and view test results
+- 🧾 Buy a machine and view orders
+- 🧠 Access research data
+- 📞 Support, About Us, and feature descriptions
 
 ---
 
-## Technologies Used
+## 🧰 Technologies Used
 
 - **Backend**: Node.js, Express.js  
-- **Frontend**: EJS templates, HTML5, CSS3  
+- **Frontend**: EJS, HTML, CSS  
 - **Database**: MySQL  
-- **Validation**: Express-validator  
 - **Session Management**: express-session  
-- **Environment Management**: dotenv  
-- **Version Control**: Git + GitHub  
+- **API Testing**: Postman  
+- **Environment**: dotenv  
 
 ---
 
-## Installation
+## ⚙️ Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/mhamad-05/dairify-web.git
+2. Navigate to the project folder:
+   ```bash
+   cd dairify-web 
+3. Install dependencies:
+   ```bash
+   npm install
+4. Set up the database:
+Import the SQL file provided in the database folder.
+ Update the database configuration in .env.
 
-cd dairify-web
-
-npm install
-
-CREATE DATABASE ards-db;
-
-
+ ---
+ ## 🛠️ Configiration
+ Create a .env file in the root directory and add the following environment variables:
 PORT=4011
 DB_HOST=127.0.0.1
 DB_USER=root
@@ -68,107 +71,100 @@ DB_PORT=3306
 DB_NAME=ards-db
 NODE_ENV=development
 
+---
+## 📡  API Endpoints
+🔐 Users
+- POST /api/user/register
 
-Database Structure
-The system uses these core tables:
+- POST /api/user/login
 
-users – User information
+- GET /api/user/:id
 
-machines – Machine details and status
+- PUT /api/user/:id
 
-antibiotics – Antibiotic types
+- DELETE /api/user/:id
 
-enzymes – Neutralizing enzymes
+💊 Antibiotics
+- GET /api/antibiotics
 
-food_samples – Submitted samples
+- POST /api/antibiotics
 
-test_results – Test results for samples
+- PUT /api/antibiotics/:id
 
-orders – Orders placed for machines
+- DELETE /api/antibiotics/:id
 
-research_data – Structured data for research purposes
+🧬 Enzymes
+- GET /api/enzyme
 
-API Endpoints
-Users
-POST /api/user/register – Register a new user
+- POST /api/enzyme
 
-POST /api/user/login – Authenticate and log in
+- PUT /api/enzyme/:id
 
-GET /api/user/:id – Get user details
+- DELETE /api/enzyme/:id
 
-PUT /api/user/:id – Update user info
+🧫 Food Samples & Test Results
+- POST /api/foodsamples
 
-DELETE /api/user/:id – Delete user
+- GET /api/foodsamples/:id
 
-Antibiotics
-GET /api/antibiotics – List all antibiotics
+- GET /api/testResult
 
-POST /api/antibiotics – Add a new antibiotic
+- POST /api/testResult
 
-PUT /api/antibiotics/:id – Update antibiotic
+- GET /api/testResult/:id
 
-DELETE /api/antibiotics/:id – Delete antibiotic
+- PUT /api/testResult/:id
 
-Enzymes
-GET /api/enzyme – List all enzymes
+- DELETE /api/testResult/:
 
-POST /api/enzyme – Add new enzyme
+🧾 Orders
+- POST /api/orders/buy
 
-PUT /api/enzyme/:id – Update enzyme
+- GET /order/confirmation/:id
 
-DELETE /api/enzyme/:id – Delete enzyme
+- GET /api/orders/:id
 
-Machines
-GET /api/machine – List all machines
+- DELETE /api/orders/:id
 
-GET /api/machine/:id – Get machine status
+📊 Research Data
+- GET /api/researchdata
 
-PUT /api/machine/:id/status – Update status
+- POST /api/researchdata
 
-Food Samples
-POST /api/foodsamples – Submit a food sample
+- DELETE /api/researchdata/:id
 
-GET /api/foodsamples/:id – View a sample
-
-Test Results
-GET /api/testResult – List test results
-
-POST /api/testResult – Add new result
-
-GET /api/testResult/:id – Get a result by ID
-
-PUT /api/testResult/:id – Update result
-
-DELETE /api/testResult/:id – Delete result
-
-Orders
-POST /api/orders/buy – Place a new order
-
-GET /order/confirmation/:id – View order summary
-
-GET /api/orders/:id – Get order by ID
-
-DELETE /api/orders/:id – Cancel order
-
-Research Data
-GET /api/researchdata – Get research data
-
-POST /api/researchdata – Add research entry
-
-DELETE /api/researchdata/:id – Delete entry
-
-
-npm start
-http://localhost:4011
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Contact
-For questions or feedback, feel free to contact me:
-Mohamad Abou Naasse	,Technical Co-Founder	abounaassemohamad@gmail.com
-
+---
+## 🚀 Usage
+1. Start the application:
+   ```bash
+   npm start
+2. Go To:
+   ```aurdino
+   http://localhost:4011
+3. Register → Log in → Use the dashboard → Manage tests, orders, and research.
 
 ---
 
-✅ Let me know if you'd like a sample `schema.sql` or deployment instructions for a free host like Render or Railway.
+### 🤝 Contributing
+Contributions are welcome!
+
+1. Fork the repo
+
+2. Create a new branch
+
+3. Commit your changes
+
+4. Push to the branch
+
+5. Open a pull request
+
+---
+### 📄 License
+Licensed under the MIT License.
+---
+### 📬 Contact
+For questions or feedback, feel free to reach out:
+
+Author: Mohamad Abou Naasse
+GitHub: mhamad-05
+Email: mohamad.abounaasse@std.balamand.edu.lb
