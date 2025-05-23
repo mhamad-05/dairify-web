@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Buy - Dairify</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="buy-page">
+
+  <!-- Header -->
+  <header class="navigation">
+    <img src="/logo.png" alt="Diarify Logo" class="logo" />
+    <nav class="main-nav">
+      <a href="/features">Features</a>
+      <a href="/support">Support</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <section class="buy-container">
+    <div class="buy-form-wrapper">
+      <h1>💳 Complete Your Purchase</h1>
+      <p class="greeting">Fill out your details to proceed.</p>
+
+      <!-- Flash Messages -->
+      <% if (messages.success) { %>
+        <div class="success-message"><%= messages.success %></div>
+      <% } %>
+
+      <% if (messages.error) { %>
+        <div class="error-message"><%= messages.error %></div>
+      <% } %>
+
+      <form action="/buy" method="POST" class="buy-form">
+        <div class="input-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+        </div>
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+        <button type="submit" class="cta-button">Submit Order</button>
+      </form>
+
+      <!-- Back Button -->
+      <div class="back-section">
+        <a href="/dashboard" class="back-to-dashboard">⬅️ Back to Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+</html>

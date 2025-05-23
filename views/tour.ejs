@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairify | Why It Matters</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<a href="/" class="back-button" title="Back to Home">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+</a>
+
+<body class="tour-page">
+
+    <!-- Header -->
+    <header class="navigation">
+        <img src="/logo.png" alt="Dairify Logo" class="logo">
+        <nav class="main-nav">
+            <a href="/tour">Tour</a>
+            <a href="/product">Product</a>
+            <a href="/features">Features</a>
+            <a href="/enterprise">Enterprise</a>
+            <a href="/support">Support</a>
+            <a href="/pricing">Pricing</a>
+        </nav>
+        <button class="btnLogin-popup">Login</button>
+    </header>
+
+    <!-- Main Tour Section -->
+    <section class="tour-section">
+        <div class="tour-content">
+            <h1>Why Dairify Matters</h1>
+            <p class="problem-statement">
+                Every year, more farmers are forced to discard valuable milk due to antibiotic contamination —
+                a result of necessary treatments given to cows. But when contaminated milk enters the food supply,
+                it poses a serious threat to human health and contributes to antibiotic resistance.
+            </p>
+            <p>
+                Dairify is a smart, portable device that detects antibiotic residues in milk,
+                identifies the type, quantifies the level, and even applies the correct enzyme to neutralize it.
+                This process saves products, protects consumers, and prevents resistant bacteria from growing.
+            </p>
+
+            <img src="graph.png" alt="Antibiotic Resistance 2050" class="tour-image">
+
+            <p class="stat-quote">
+                📊 <em>"By 2050, antibiotic resistance could become the leading cause of death worldwide."</em> — WHO
+            </p>
+
+            <a href="/" class="cta-button">← Back to Home</a>
+        </div>
+    </section>
+
+<!-- Login/Register Popup -->
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

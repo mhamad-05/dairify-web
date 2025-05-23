@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Orders & Maintenance - Dairify</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="orders-page">
+
+  <!-- Header -->
+  <header class="navigation">
+    <img src="/logo.png" alt="Diarify Logo" class="logo" />
+    <nav class="main-nav">
+      <a href="/features">Features</a>
+      <a href="/support">Support</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <section class="orders-container">
+    <div class="orders-panel">
+      <h1>📦 Orders & Maintenance</h1>
+      <p class="greeting">Here are your recent orders and scheduled maintenance.</p>
+
+      <!-- Flash Messages -->
+      <% if (messages.success) { %>
+        <div class="success-message">
+          <%= messages.success %>
+        </div>
+        <% } %>
+
+          <% if (messages.error) { %>
+            <div class="error-message">
+              <%= messages.error %>
+            </div>
+            <% } %>
+
+              <!-- Orders Table -->
+              <% if (orders && orders.length> 0) { %>
+                <div class="orders-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Order ID</th>
+                        <th>User ID</th>
+                        <th>Machine ID</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% orders.forEach(order=> { %>
+                        <tr>
+                          <td>
+                            <%= order.order_id %>
+                          </td>
+                          <td>
+                            <%= order.user_id %>
+                          </td>
+                          <td>
+                            <%= order.machine_id %>
+                          </td>
+                          <% let status=order.order_status ? order.order_status.toString() : 'unknown' ; %>
+                            <td class="status <%= status.toLowerCase() %>">
+                              <%= status %>
+                            </td>
+                            <td>
+                              <%= new Date(order.order_date).toLocaleDateString() %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+                <% } else { %>
+                  <div class="empty-state">
+                    <p>No orders found.</p>
+                  </div>
+                  <% } %>
+
+                    <!-- Back Button -->
+                    <div class="back-section">
+                      <a href="/dashboard" class="back-to-dashboard">⬅️ Back to Dashboard</a>
+                    </div>
+    </div>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>

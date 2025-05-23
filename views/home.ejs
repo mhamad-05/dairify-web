@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diarify - Your Website</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <!-- ✅ Show success message here -->
+    <% if (messages.success) { %>
+        <div class="flash-message success">
+            <%= messages.success %>
+        </div>
+        <% } %>
+
+            <% if (messages.error) { %>
+                <div class="error-message">
+                    <%= messages.error %>
+                </div>
+                <% } %>
+                    <header class="navigation">
+                        <img src="/logo.png" alt="Diarify Logo" class="logo" />
+                        <nav class="main-nav">
+                            <a href="/tour">Tour</a>
+                            <a href="/product">Product</a>
+                            <a href="/features">Features</a>
+                            <a href="/enterprise">Enterprise</a>
+                            <a href="/support">Support</a>
+                            <a href="/pricing">Pricing</a>
+                        </nav>
+                        <button class="btnLogin-popup">Login</button>
+                    </header>
+
+                    <!-- Hero Section -->
+                    <section class="hero">
+                        <div class="overlay"></div>
+                        <div class="hero-text">
+                            <h1>Welcome to Dairify</h1>
+                            <p>Test. Detect. Neutralize.<br />Watch your health to count your wealth.</p>
+                            <a href="/product" class="cta-button">Explore the Machine</a>
+                        </div>
+                    </section>
+
+                    <!-- Popup Login/Register -->
+                    <div
+                        class="wrapper <%= typeof errorMessage !== 'undefined' && errorMessage ? 'active-popup' : '' %>">
+                        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+
+                        <p class="login-hint">Log in to access exclusive features like buying machines and placing
+                            orders.</p>
+                        <!-- Login Form -->
+                        <div class="form-box login">
+                            <h2>Login</h2>
+                            <form action="/api/user/login" method="POST" autocomplete="off">
+                                <div class="input-box">
+                                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                                    <input type="text" name="email" placeholder=" " required autocomplete="off">
+
+                                    <label>Email</label>
+                                </div>
+                                <div class="input-box">
+                                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                                    <input type="password" name="password" placeholder=" " required autocomplete="off">
+
+                                    <label>Password</label>
+                                </div>
+                                <div class="remember-forgot">
+                                    <label><input type="checkbox" />Remember me</label>
+                                    <a href="#">Forgot Password?</a>
+                                </div>
+                                <button type="submit" class="btn">Login</button>
+
+                                <% if (typeof errorMessage !=='undefined' && errorMessage) { %>
+                                    <div class="error-message">
+                                        <%= errorMessage %>
+                                    </div>
+                                    <% } %>
+
+                                        <div class="login-register">
+                                            <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                                        </div>
+                            </form>
+                        </div>
+
+                        <!-- Register Form -->
+                        <div class="form-box register">
+                            <h2>Registration</h2>
+                            <form action="/api/user" method="POST">
+                                <div class="input-box">
+                                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                                    <input type="text" name="first_name" required />
+                                    <label>First Name</label>
+                                </div>
+                                <div class="input-box">
+                                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                                    <input type="text" name="second_name" required />
+                                    <label>Second Name</label>
+                                </div>
+                                <div class="input-box">
+                                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                                    <input type="text" name="email" required />
+                                    <label>Email</label>
+                                </div>
+                                <div class="input-box">
+                                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                                    <input type="password" name="password" required />
+                                    <label>Password</label>
+                                </div>
+                                <div class="remember-forgot">
+                                    <label><input type="checkbox" />I agree to the terms & conditions</label>
+                                </div>
+                                <button type="submit" class="btn">Register</button>
+
+                                <div class="login-register">
+                                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <script src="/script.js"></script>
+                    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+
+                    </script>
+                    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const message = document.querySelector('.logout-message');
+                            if (message) {
+                                setTimeout(() => {
+                                    message.style.opacity = '0';
+                                    message.style.transition = 'opacity 0.5s ease';
+                                    setTimeout(() => message.remove(), 500);
+                                }, 4000); // Hide after 4 seconds
+                            }
+                        });
+                    </script>
+
+</body>
+
+</html>
+<!-- At the bottom of home.ejs -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const message = document.querySelector('.success-message');
+        if (message) {
+            setTimeout(() => {
+                message.style.opacity = '0';
+                setTimeout(() => message.remove(), 500);
+            }, 4000); // Hide after 4 seconds
+        }
+    });
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research Data - Dairify</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="research-page">
+
+  <!-- Header -->
+  <header class="navigation">
+    <img src="/logo.png" alt="Diarify Logo" class="logo" />
+    <nav class="main-nav">
+      <a href="/features">Features</a>
+      <a href="/support">Support</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <section class="research-container">
+    <div class="research-panel">
+      <h1>📚 Research Data</h1>
+      <p class="greeting">Scientific findings and insights from recent tests.</p>
+
+      <!-- Flash Messages -->
+      <% if (messages.success) { %>
+        <div class="success-message"><%= messages.success %></div>
+      <% } %>
+
+      <% if (messages.error) { %>
+        <div class="error-message"><%= messages.error %></div>
+      <% } %>
+
+      <!-- Research Table -->
+      <% if (researchData && researchData.length > 0) { %>
+        <div class="research-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Research ID</th>
+                <th>Findings</th>
+                <th>Date Published</th>
+                <th>Test ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% researchData.forEach(data => { %>
+                <tr>
+                  <td><%= data.research_id %></td>
+                  <td><%= data.findings.substring(0, 60) %>...</td>
+                  <td><%= new Date(data.published_at).toLocaleDateString() %></td>
+                  <td><%= data.test_id %></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      <% } else { %>
+        <div class="empty-state">
+          <p>No research data found.</p>
+        </div>
+      <% } %>
+
+      <!-- Back Button -->
+      <div class="back-section">
+        <a href="/dashboard" class="back-to-dashboard">⬅️ Back to Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+</html>

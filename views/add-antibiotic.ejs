@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Antibiotic - Dairify</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="form-page">
+
+<!-- Header -->
+<header class="navigation">
+  <img src="/logo.png" alt="Diarify Logo" class="logo">
+  <nav class="main-nav">
+    <a href="/features">Features</a>
+    <a href="/support">Support</a>
+    <a href="/logout">Logout</a>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<section class="form-container">
+  <h1>Add New Antibiotic</h1>
+  <p class="greeting">Fill out the details below to add a new antibiotic type.</p>
+
+  <!-- ✅ Flash Messages -->
+  <% if (messages.success) { %>
+    <div class="success-message"><%= messages.success %></div>
+  <% } %>
+  <% if (messages.error) { %>
+    <div class="error-message"><%= messages.error %></div>
+  <% } %>
+
+  <!-- ✅ Add Antibiotic Form -->
+  <form action="/api/antibiotics" method="POST" class="sample-form">
+    <div class="input-group">
+      <label for="name">Antibiotic Name</label>
+      <input type="text" id="name" name="name" required placeholder="e.g., Penicillin">
+    </div>
+
+    <div class="input-group">
+      <label for="maximum_safe_concentration">Maximum Safe Concentration (mg/L)</label>
+      <input type="number" id="maximum_safe_concentration" name="maximum_safe_concentration"
+        min="0" step="any" required placeholder="e.g., 0.05">
+    </div>
+
+    <button type="submit" class="cta-button">Add Antibiotic</button>
+  </form>
+</section>
+
+<script src="/script.js"></script>
+</body>
+</html>

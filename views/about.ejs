@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Dairify</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="about-page">
+
+  <!-- Back Button -->
+  <a href="/" class="back-button" title="Back to Home">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </a>
+
+  <!-- Header -->
+  <header class="navigation">
+    <img src="/logo.png" alt="Dairify Logo" class="logo" />
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/features">Features</a>
+      <a href="/enterprise">Enterprise</a>
+      <a href="/support">Support</a>
+    </nav>
+    <button class="btnLogin-popup">Login</button>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h1>Meet the Dairify Team</h1>
+
+    <div class="team-grid">
+
+      <div class="team-member">
+        <img src="/jinan.jpg" alt="Jinan Ali Abbass">
+        <h3>Jinan Ali Abbass</h3>
+        <p><strong>Founder</strong></p>
+        <p>“A chemist at Lebanese University with a background in leadership, having experience in coordination, analytical thinking, and project management.”</p>
+        <a href="mailto:jinanabbass92@gmail.com">jinanabbass92@gmail.com</a>
+      </div>
+
+      <div class="team-member">
+        <img src="/sedra.jpg" alt="Sedra Khalil Naji">
+        <h3>Sedra Khalil Naji</h3>
+        <p><strong>Co-Founder</strong></p>
+        <p>“A chemist at Lebanese University with a strong background in biochemistry, skilled in communication and persuasion.”</p>
+        <a href="mailto:najisedra2005atmail.com@gmail.com">najisedra2005atmail.com@gmail.com</a>
+      </div>
+
+      <div class="team-member">
+        <img src="/mohamad.jpg" alt="Mohamad Abou Naasse">
+        <h3>Mohamad Abou Naasse</h3>
+        <p><strong>Technical Co-Founder</strong></p>
+        <p>“A top-performing CS student at Balamand, blending technical expertise with vision to build solutions that bridge technology and real-world impact.”</p>
+        <a href="mailto:abunaassemohamad@gmail.com">abunaassemohamad@gmail.com</a>
+      </div>
+
+      <div class="team-member">
+        <img src="/mohamadAyoub.jpg" alt="Mohammad Ayoub">
+        <h3>Mohammad Ayoub</h3>
+        <p><strong>Co-Founder</strong></p>
+        <p>“A chemist at Lebanese University with a biology background and strong creativity and problem-solving potential.”</p>
+        <a href="mailto:ayoubmohammad306@gmail.com">ayoubmohammad306@gmail.com</a>
+      </div>
+
+    </div>
+  </section>
+
+<!-- Login/Register Popup -->
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  <script src="/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

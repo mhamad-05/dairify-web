@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dairify | Dashboard</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="dashboard-page">
+
+  <!-- Header -->
+  <header class="navigation">
+    <img src="/logo.png" alt="Diarify Logo" class="logo" />
+    <nav class="main-nav">
+      <a href="/features">Features</a>
+      <a href="/support">Support</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Dashboard Content -->
+  <section class="dashboard-container">
+    <h1>Welcome back!</h1>
+    <p class="greeting">Here's what you can do today.</p>
+    <!-- Show success message -->
+    <% if (messages.success) { %>
+      <div class="success-message">
+        <%= messages.success %>
+      </div>
+      <% } %>
+
+        <!-- Show error message -->
+        <% if (messages.error) { %>
+          <div class="error-message">
+            <%= messages.error %>
+          </div>
+          <% } %>
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+
+              <!-- Machine Status -->
+              <div class="dashboard-card card-machine">
+                <div class="card-icon">🔬</div>
+                <h2>Machine Status</h2>
+                <p>Status: <strong>Active</strong></p>
+                <p>Last test: 3 hours ago</p>
+                <p>Temperature: 37°C</p>
+              </div>
+
+              <!-- Manage Samples -->
+              <div class="dashboard-card card-sample">
+                <div class="card-icon">🧪</div>
+                <h2>Manage Samples</h2>
+                <a href="/food-samples" class="cta-button small">Request New Test</a>
+                <a href="/add-antibiotic" class="cta-button small">Add Antibiotic</a>
+                <a href="/add-enzyme" class="cta-button small">Add Enzyme</a>
+              </div>
+
+              <!-- Recent Results -->
+              <a href="/test-results" class="dashboard-card card-results" role="button" tabindex="0">
+                <div class="card-icon">📊</div>
+                <h2>Recent Test Results</h2>
+                <p>View your latest reports</p>
+              </a>
+
+              <!-- Research Access -->
+              <a href="/research" class="dashboard-card card-research" role="button" tabindex="0">
+                <div class="card-icon">📚</div>
+                <h2>Research Data</h2>
+                <p>Access scientific studies and data</p>
+              </a>
+
+              <!-- Orders -->
+              <a href="/orders" class="dashboard-card card-orders" role="button" tabindex="0">
+                <div class="card-icon">📦</div>
+                <h2>Orders & Maintenance</h2>
+                <p>Track shipments and schedule maintenance</p>
+              </a>
+
+            </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <a href="#top" class="back-to-top" aria-label="Back to top">⬆️</a>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Enzyme - Dairify</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="form-page">
+
+  <!-- Header -->
+  <header class="navigation">
+    <img src="/logo.png" alt="Diarify Logo" class="logo" />
+    <nav class="main-nav">
+      <a href="/features">Features</a>
+      <a href="/support">Support</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <section class="form-container">
+    <h1>Add New Enzyme</h1>
+    <p class="greeting">Fill out the details below to add a new enzyme.</p>
+
+    <!-- ✅ Flash Messages -->
+    <% if (messages.success) { %>
+      <div class="success-message"><%= messages.success %></div>
+    <% } %>
+
+    <% if (messages.error) { %>
+      <div class="error-message"><%= messages.error %></div>
+    <% } %>
+
+    <!-- ✅ Add Enzyme Form -->
+    <form action="/api/enzyme" method="POST" class="sample-form">
+      <div class="input-group">
+        <label for="name">Enzyme Name</label>
+        <input type="text" id="name" name="name" required placeholder="e.g., Penicillinase" />
+      </div>
+
+      <div class="input-group">
+        <label for="target_antibiotic">Target Antibiotic</label>
+        <input type="text" id="target_antibiotic" name="target_antibiotic" required placeholder="e.g., Penicillin" />
+      </div>
+
+      <div class="input-group">
+        <label for="effectiveness_level">Effectiveness Level (0–100%)</label>
+        <input type="number" id="effectiveness_level" name="effectiveness_level"
+          min="0" max="100" step="any" required placeholder="e.g., 95.5" />
+      </div>
+
+      <div class="input-group">
+        <label for="test_id">Test ID (Optional)</label>
+        <input type="number" id="test_id" name="test_id" placeholder="e.g., 42" />
+      </div>
+
+      <button type="submit" class="cta-button">Add Enzyme</button>
+    </form>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+</html>

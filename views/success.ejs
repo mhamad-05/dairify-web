@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Success - Dairify</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="success-page">
+
+  <!-- Header -->
+  <header class="navigation">
+    <img src="/logo.png" alt="Diarify Logo" class="logo" />
+    <nav class="main-nav">
+      <a href="/features">Features</a>
+      <a href="/support">Support</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Success Message Section -->
+  <section class="confirmation-section">
+    <div class="confirmation-box">
+      <h1>✅ Sample Submitted Successfully!</h1>
+      <p><%= message %></p>
+
+      <div class="confirmation-actions">
+        <a href="/dashboard" class="cta-button">Back to Dashboard</a>
+        <a href="/food-samples" class="cta-button secondary">Add Another Sample</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+</html>

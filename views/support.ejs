@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dairify | Support</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="support-page">
+
+  <!-- Back Button -->
+  <a href="/" class="back-button" title="Back to Home">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </a>
+
+  <!-- Header -->
+  <header class="navigation">
+    <img src="/logo.png" alt="Dairify Logo" class="logo" />
+    <nav class="main-nav">
+      <a href="/dashboard">Home</a>
+      <a href="/features">Features</a>
+      <a href="/enterprise">Enterprise</a>
+        </nav>
+    <button class="btnLogin-popup">Login</button>
+  </header>
+
+  <section class="support-container">
+    <h1>Need Help with Dairify?</h1>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <ul>
+        <li><strong>How do I set up the machine?</strong><br />The setup is automatic and guided by the screen. Just plug and start.</li>
+        <li><strong>What does the machine detect?</strong><br />It detects common antibiotics like Penicillin and Tetracycline.</li>
+        <li><strong>Can I use my own enzymes?</strong><br />Yes, the machine allows for enzyme input and tracking.</li>
+      </ul>
+    </div>
+
+    <!-- Support Subscription -->
+    <div class="support-note">
+      💬 All Dairify devices include a <strong>$20/month</strong> support subscription — covering software updates, troubleshooting, and priority assistance.
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <p>📧 Email us at <a href="mailto:support@dairify.com">support@dairify.com</a></p>
+<p>Or learn more about our team on the <a href="/about">About Us</a> page.</p>
+    </div>
+
+  </section>
+
+<!-- Login/Register Popup -->
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  <!-- Scripts -->
+  <script src="/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

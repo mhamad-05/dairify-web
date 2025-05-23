@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Results - Dairify</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="results-page">
+
+  <!-- Header -->
+  <header class="navigation">
+    <img src="/logo.png" alt="Diarify Logo" class="logo" />
+    <nav class="main-nav">
+      <a href="/features">Features</a>
+      <a href="/support">Support</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <section class="results-container">
+    <!-- Back Button -->
+    <div class="back-section">
+      <a href="/dashboard" class="back-to-dashboard">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"></path>
+        </svg>
+        Back to Dashboard
+      </a>
+    </div>
+    <h1>Recent Test Results</h1>
+    <p class="greeting">Here are the latest test results from your machine.</p>
+
+    <!-- Flash Messages -->
+    <% if (messages.success) { %>
+      <div class="success-message">
+        <%= messages.success %>
+      </div>
+      <% } %>
+
+        <% if (messages.error) { %>
+          <div class="error-message">
+            <%= messages.error %>
+          </div>
+          <% } %>
+
+
+            <!-- Table or List of Test Results -->
+            <% if (testResults && testResults.length> 0) { %>
+              <div class="results-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Sample ID</th>
+                      <th>Status</th>
+                      <th>Antibiotic</th>
+                      <th>Enzyme</th>
+                      <th>Date Collected</th>
+                      <th>Machine ID</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% testResults.forEach(result=> { %>
+                      <tr>
+                        <td>
+                          <%= result.sample_id %>
+                        </td>
+                        <td class="status <%= result.result_status === 'Detected' ? 'detected' : 'clean' %>">
+                          <%= result.result_status %>
+                        </td>
+                        <td>
+                          <%= result.antibioticName || 'N/A' %>
+                        </td>
+                        <td>
+                          <%= result.enzymeName || 'N/A' %>
+                        </td>
+                        <td>
+                          <%= result.date_collected ? new Date(result.date_collected).toLocaleString() : 'N/A' %>
+                        </td>
+                        <td>
+                          <%= result.machine_id %>
+                        </td>
+                      </tr>
+                      <% }) %>
+                  </tbody>
+                </table>
+              </div>
+              <% } else { %>
+                <div class="empty-state">
+                  <p>No test results found. Run a sample test to see results here.</p>
+                  <a href="/food-samples" class="cta-button small">Request New Test</a>
+                </div>
+                <% } %>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
