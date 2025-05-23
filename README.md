@@ -165,6 +165,6 @@ Licensed under the MIT License.
 ### 📬 Contact
 For questions or feedback, feel free to reach out:
 
-Author: Mohamad Abou Naasse
-GitHub: mhamad-05
-Email: mohamad.abounaasse@std.balamand.edu.lb
+- Author: Mohamad Abou Naasse
+- GitHub: mhamad-05
+- Email: mohamad.abounaasse@std.balamand.edu.lb
