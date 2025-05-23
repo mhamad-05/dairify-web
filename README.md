@@ -62,7 +62,8 @@ Import the SQL file provided in the database folder.
 
  ---
  ## 🛠️ Configiration
- Create a .env file in the root directory and add the following environment variables:
+ - Create a .env file in the root directory and add the following environment variables:
+ ```bash
 PORT=4011
 DB_HOST=127.0.0.1
 DB_USER=root
